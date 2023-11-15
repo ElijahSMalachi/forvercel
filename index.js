@@ -41,9 +41,9 @@ const upload = multer({ storage });
 
 // app.post('/auth', register);
 
-app.get('/auth/:userId', (req,res)=>{
-    const { userId } = req.params
-    res.status(200).json('Hey this is get', userId );
+app.get('/auth', (req,res)=>{
+    
+    res.status(200).json('Hey this is get' );
 })
 
 const PORT = 3006;
