@@ -10,7 +10,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 import User from "./modals/User.js";
-// import { register } from "./controllers/auth.js";
+import { register } from "./controllers/auth.js";
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
@@ -39,7 +39,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-// app.post('/auth', register);
+app.post('/auth', register);
 
 app.get('/auth', (req,res)=>{
     
