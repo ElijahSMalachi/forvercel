@@ -39,7 +39,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-app.post('/auth', register);
+// app.post('/auth', register);
 
 app.get('/auth/:userId', (req,res)=>{
     const { userId } = req.params
