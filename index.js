@@ -10,6 +10,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 import User from "./modals/User.js";
+
 // import { register } from "./controllers/auth.js";
 
 /* CONFIGURATIONS */
@@ -40,10 +41,7 @@ const upload = multer({ storage });
 
 
 app.post('/auth', async (req, res) => {
-  
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
+ 
   try {
     const {
       firstName,
@@ -73,8 +71,8 @@ function capitalizeFirstLetter(string) {
       const salt = await bcrypt.genSalt();
       const passwordHash = await bcrypt.hash(password, salt);
       const newUser = new User({
-        firstName: capitalizeFirstLetter(firstName),
-        lastName: capitalizeFirstLetter(lastName),
+        firstName,
+        lastName,
         email: email.toLowerCase(),
         password: passwordHash,
         picturePath,
