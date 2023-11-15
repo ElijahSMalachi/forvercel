@@ -39,11 +39,11 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-// app.post('/auth', register);
+app.get('/auth', register);
 
 app.get('/auth/:userId', (req,res)=>{
     const {userId} = req.params;
-    res.status(200).json(`Hey this is get ${register}` );
+    res.status(200).json(`Hey this is get ${userId}` );
 })
 
 const PORT = 3006;
